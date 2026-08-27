@@ -1,0 +1,85 @@
+# ⚡ DevGo
+
+> **Stop wrestling with buggy code in isolation.** Paste any GitHub repository URL, instantly map out its codebase, run tests, and diagnose root causes—all inside one unified, developer-first environment.
+
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
+
+---
+
+## 🚀 What is DevGo?
+
+**DevGo** is designed to take the friction out of code analysis, testing, and debugging. Instead of spending hours cloning, configuring local environments, tracking down broken dependencies, and digging through nested directories manually, DevGo gives developers an immediate, bird's-eye view of any public or private GitHub repository.
+
+Whether you're fixing a complex bug, reviewing an open-source pull request, or auditing a legacy project, DevGo streamlines your workflow into three simple steps: **Analyze → Test → Debug.**
+
+---
+
+## ✨ Key Features
+
+- 🔍 **Instant Repo Analysis**: Paste a GitHub repository link to automatically scan structure, file dependencies, and potential code smells.
+- 🧪 **Automated Testing Suite**: Instantly run unit and integration tests across the codebase without manually setting up local dependencies.
+- 🐛 **Deep-Dive Debugging**: Trace stack traces directly to the exact file and line of code where execution fails.
+- 📊 **Architecture Insights**: Visualize project structure and entry points to get up to speed on unfamiliar repositories in minutes.
+- ⚡ **Lightweight & Fast**: Optimized for speed so you spend less time configuring and more time shipping fixes.
+
+---
+
+## 🛠️ How It Works
+
+📥 Paste GitHub URL  --->  🧐 Code Analysis  --->  🧪 Run Tests  --->  🛠️ Fix & Debug
+
+
+1. **Paste**: Drop your repository link into DevGo.
+2. **Inspect**: Let DevGo parse the codebase structure and dependencies.
+3. **Execute**: Run test suites or simulate edge cases to isolate failing logic.
+4. **Resolve**: Target the exact bugged lines and apply fixes with complete clarity.
+
+---
+
+## ⚙️ Quick Start
+
+### Prerequisites
+- [Node.js](https://nodejs.org/) (v18 or higher recommended)
+- [Git](https://git-scm.com/)
+
+### Installation
+
+1. **Clone the repository:**
+   ```bash
+   git clone [https://github.com/suhaibshariff786/devgo.git](https://github.com/suhaibshariff786/devgo.git)
+   cd devgo
+Install dependencies:
+
+Bash
+npm install
+Set up environment variables:
+Create a .env file in the root directory and add your required keys:
+
+Code snippet
+PORT=5000
+GITHUB_TOKEN=your_personal_access_token
+Launch the app:
+
+Bash
+npm run dev
+🤝 Contributing
+Contributions are what make the open-source community an incredible place to learn, inspire, and create. Any contributions you make are greatly appreciated!
+
+Fork the project
+
+Create your feature branch (git checkout -b feature/AmazingFeature)
+
+Commit your changes (git commit -m 'Add some AmazingFeature')
+
+Push to the branch (git checkout origin feature/AmazingFeature)
+
+Open a Pull Request
+
+📜 License
+Distributed under the MIT License. See LICENSE for more information.
+
+
+---
+
+<FollowUp label="Want to add badge links or custom feature sections?" query="Can you help me customize the DevGo README with specific tech stack badges and environment configurations?"/>
