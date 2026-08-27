@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="475" viewBox="0 0 1200 475" role="img" aria-labelledby="title desc">
+  <title id="title">DevGo repository analysis workspace</title>
+  <desc id="desc">A dark developer workspace showing repository analysis, pipeline status, and diagnostic output.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1220"/>
+      <stop offset="1" stop-color="#172a3b"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#38bdf8"/>
+      <stop offset="1" stop-color="#34d399"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="475" rx="20" fill="url(#bg)"/>
+  <rect x="34" y="32" width="1132" height="411" rx="14" fill="#0f1b2d" stroke="#294156"/>
+  <rect x="34" y="32" width="1132" height="54" rx="14" fill="#13263a"/>
+  <circle cx="65" cy="59" r="7" fill="#fb7185"/><circle cx="88" cy="59" r="7" fill="#fbbf24"/><circle cx="111" cy="59" r="7" fill="#34d399"/>
+  <text x="145" y="66" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="19" font-weight="700">DEVGO / repository workspace</text>
+  <rect x="920" y="48" width="205" height="24" rx="12" fill="#123b38" stroke="#23766b"/>
+  <circle cx="940" cy="60" r="5" fill="#34d399"/><text x="954" y="65" fill="#a7f3d0" font-family="Arial, sans-serif" font-size="12">PIPELINE HEALTHY</text>
+  <rect x="58" y="111" width="248" height="292" rx="10" fill="#111f31" stroke="#294156"/>
+  <text x="78" y="143" fill="#94a3b8" font-family="Arial, sans-serif" font-size="12" font-weight="700">REPOSITORY</text>
+  <text x="78" y="177" fill="#f8fafc" font-family="Arial, sans-serif" font-size="18" font-weight="700">sample-web-app</text>
+  <text x="78" y="204" fill="#64748b" font-family="monospace" font-size="12">main  /  7f9a2c1</text>
+  <line x1="78" y1="226" x2="286" y2="226" stroke="#294156"/>
+  <text x="78" y="256" fill="#7dd3fc" font-family="monospace" font-size="13">src/</text>
+  <text x="94" y="281" fill="#cbd5e1" font-family="monospace" font-size="13">app.js</text>
+  <text x="78" y="310" fill="#7dd3fc" font-family="monospace" font-size="13">tests/</text>
+  <text x="94" y="335" fill="#cbd5e1" font-family="monospace" font-size="13">app.test.js</text>
+  <text x="78" y="364" fill="#7dd3fc" font-family="monospace" font-size="13">package.json</text>
+  <rect x="331" y="111" width="497" height="292" rx="10" fill="#0b1626" stroke="#294156"/>
+  <text x="355" y="143" fill="#94a3b8" font-family="Arial, sans-serif" font-size="12" font-weight="700">CI PIPELINE</text>
+  <text x="355" y="177" fill="#f8fafc" font-family="Arial, sans-serif" font-size="20" font-weight="700">Automated test and build</text>
+  <rect x="355" y="205" width="122" height="64" rx="8" fill="#123b38" stroke="#23766b"/><text x="372" y="231" fill="#a7f3d0" font-family="Arial, sans-serif" font-size="13">CHECKOUT</text><text x="372" y="253" fill="#34d399" font-family="Arial, sans-serif" font-size="13" font-weight="700">PASSED</text>
+  <rect x="518" y="205" width="122" height="64" rx="8" fill="#123b38" stroke="#23766b"/><text x="535" y="231" fill="#a7f3d0" font-family="Arial, sans-serif" font-size="13">TESTS</text><text x="535" y="253" fill="#34d399" font-family="Arial, sans-serif" font-size="13" font-weight="700">4 PASSED</text>
+  <rect x="681" y="205" width="122" height="64" rx="8" fill="#123b38" stroke="#23766b"/><text x="698" y="231" fill="#a7f3d0" font-family="Arial, sans-serif" font-size="13">BUILD</text><text x="698" y="253" fill="#34d399" font-family="Arial, sans-serif" font-size="13" font-weight="700">READY</text>
+  <line x1="416" y1="269" x2="416" y2="307" stroke="#38bdf8" stroke-width="3"/><line x1="579" y1="269" x2="579" y2="307" stroke="#38bdf8" stroke-width="3"/><line x1="742" y1="269" x2="742" y2="307" stroke="#38bdf8" stroke-width="3"/>
+  <text x="355" y="338" fill="#64748b" font-family="monospace" font-size="12">Node 18.x   Node 20.x   artifact: dist/</text>
+  <rect x="853" y="111" width="323" height="292" rx="10" fill="#111f31" stroke="#294156"/>
+  <text x="877" y="143" fill="#94a3b8" font-family="Arial, sans-serif" font-size="12" font-weight="700">DIAGNOSTICS</text>
+  <text x="877" y="180" fill="#f8fafc" font-family="Arial, sans-serif" font-size="18" font-weight="700">Root cause found</text>
+  <rect x="877" y="203" width="275" height="52" rx="7" fill="#272033" stroke="#7c3d65"/><text x="894" y="226" fill="#fda4af" font-family="Arial, sans-serif" font-size="12">No failing assertions detected</text><text x="894" y="244" fill="#fb7185" font-family="monospace" font-size="11">last run: success</text>
+  <text x="877" y="294" fill="#94a3b8" font-family="Arial, sans-serif" font-size="12">Analyze code, workflow, and runs</text>
+  <text x="877" y="320" fill="#38bdf8" font-family="Arial, sans-serif" font-size="13" font-weight="700">Inspect with clarity - ship with confidence</text>
+</svg>

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="260" viewBox="0 0 1200 260" role="img" aria-labelledby="title desc">
+  <title id="title">DevGo workflow</title>
+  <desc id="desc">Four stages: analyze, test, debug, and resolve.</desc>
+  <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#0b1220"/><stop offset="1" stop-color="#13263a"/></linearGradient></defs>
+  <rect width="1200" height="260" rx="20" fill="url(#bg)"/>
+  <text x="600" y="43" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="20" font-weight="700">From repository URL to actionable fix</text>
+  <g font-family="Arial, sans-serif">
+    <rect x="55" y="87" width="220" height="105" rx="12" fill="#102f45" stroke="#247da4"/><text x="165" y="124" text-anchor="middle" fill="#7dd3fc" font-size="14" font-weight="700">01  ANALYZE</text><text x="165" y="153" text-anchor="middle" fill="#cbd5e1" font-size="13">Map files, workflows,</text><text x="165" y="173" text-anchor="middle" fill="#cbd5e1" font-size="13">and repository health</text>
+    <rect x="340" y="87" width="220" height="105" rx="12" fill="#123b38" stroke="#23766b"/><text x="450" y="124" text-anchor="middle" fill="#6ee7b7" font-size="14" font-weight="700">02  TEST</text><text x="450" y="153" text-anchor="middle" fill="#cbd5e1" font-size="13">Run checks and inspect</text><text x="450" y="173" text-anchor="middle" fill="#cbd5e1" font-size="13">pipeline feedback</text>
+    <rect x="625" y="87" width="220" height="105" rx="12" fill="#3a2d16" stroke="#9a6b21"/><text x="735" y="124" text-anchor="middle" fill="#fcd34d" font-size="14" font-weight="700">03  DEBUG</text><text x="735" y="153" text-anchor="middle" fill="#cbd5e1" font-size="13">Trace failures to their</text><text x="735" y="173" text-anchor="middle" fill="#cbd5e1" font-size="13">root cause</text>
+    <rect x="910" y="87" width="235" height="105" rx="12" fill="#302034" stroke="#854d78"/><text x="1027" y="124" text-anchor="middle" fill="#f0abfc" font-size="14" font-weight="700">04  RESOLVE</text><text x="1027" y="153" text-anchor="middle" fill="#cbd5e1" font-size="13">Apply fixes and improve</text><text x="1027" y="173" text-anchor="middle" fill="#cbd5e1" font-size="13">the workflow</text>
+  </g>
+  <g stroke="#64748b" stroke-width="3" fill="none"><path d="M278 139h48"/><path d="M563 139h48"/><path d="M848 139h48"/></g>
+  <g fill="#94a3b8"><path d="M326 139l-10-7v14z"/><path d="M611 139l-10-7v14z"/><path d="M896 139l-10-7v14z"/></g>
+</svg>

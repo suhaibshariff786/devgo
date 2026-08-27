@@ -2,8 +2,13 @@
 
 > **Stop wrestling with buggy code in isolation.** Paste any GitHub repository URL, instantly map out its codebase, run tests, and diagnose root causes—all inside one unified, developer-first environment.
 
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
+<p align="center">
+   <img width="1100" alt="DevGo repository analysis workspace" src="autopipeline---automated-ci-pipeline-platform/docs/images/devgo-overview.svg" />
+</p>
+
+<p align="center">
+   <img width="900" alt="DevGo Analyze, Test, Debug, Resolve workflow" src="autopipeline---automated-ci-pipeline-platform/docs/images/devgo-workflow.svg" />
+</p>
 
 ---
 
