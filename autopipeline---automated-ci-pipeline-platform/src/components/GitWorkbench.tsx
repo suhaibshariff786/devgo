@@ -20,6 +20,7 @@ interface GitWorkbenchProps {
   activeFileIndex: number;
   onSelectFile: (idx: number) => void;
   onUpdateFileContent: (idx: number, newContent: string) => void;
+  onAddNewFile?: (name: string, path: string, content: string) => void;
   onResetFiles: () => void;
   onTriggerPipeline: (commitMsg: string, branch: string, isPR?: boolean) => void;
   pipelineStatus: PipelineStatus;
@@ -31,14 +32,17 @@ export const GitWorkbench: React.FC<GitWorkbenchProps> = ({
   activeFileIndex,
   onSelectFile,
   onUpdateFileContent,
+  onAddNewFile,
   onResetFiles,
   onTriggerPipeline,
   pipelineStatus,
   onInjectScenario
 }) => {
   const [branch, setBranch] = React.useState('main');
-  const [commitMessage, setCommitMessage] = React.useState('feat: update invoice tax logic & add health checks');
+  const [commitMessage, setCommitMessage] = React.useState('feat: update code & run automated CI');
   const [isPRMode, setIsPRMode] = React.useState(false);
+  const [isCreatingFile, setIsCreatingFile] = React.useState(false);
+  const [newFilePath, setNewFilePath] = React.useState('');
 
   const activeFile = files[activeFileIndex] || files[0];
 
@@ -114,9 +118,58 @@ export const GitWorkbench: React.FC<GitWorkbenchProps> = ({
       <div className="flex flex-col md:flex-row flex-1 min-h-[380px]">
         {/* File Explorer Sidebar */}
         <div className="w-full md:w-56 bg-slate-950/60 border-b md:border-b-0 md:border-r border-slate-800 p-3 space-y-2 shrink-0">
-          <div className="text-[11px] font-bold uppercase tracking-wider text-slate-500 flex items-center gap-1.5 px-2 mb-2">
-            <FolderTree className="w-3.5 h-3.5" /> Repository Files
+          <div className="flex items-center justify-between px-2 mb-2">
+            <div className="text-[11px] font-bold uppercase tracking-wider text-slate-500 flex items-center gap-1.5">
+              <FolderTree className="w-3.5 h-3.5" /> Files
+            </div>
+            {onAddNewFile && (
+              <button
+                onClick={() => setIsCreatingFile(!isCreatingFile)}
+                className="text-[10px] text-sky-400 hover:text-sky-300 flex items-center gap-1 bg-sky-500/10 border border-sky-500/20 px-1.5 py-0.5 rounded transition"
+                title="Add custom file from your repository"
+              >
+                <Plus className="w-3 h-3" /> New
+              </button>
+            )}
           </div>
+
+          {isCreatingFile && (
+            <div className="p-2 bg-slate-900 border border-slate-700 rounded-lg space-y-1.5 text-xs">
+              <input
+                type="text"
+                value={newFilePath}
+                onChange={e => setNewFilePath(e.target.value)}
+                placeholder="e.g. src/utils.js"
+                className="w-full bg-slate-950 border border-slate-800 rounded px-2 py-1 text-[11px] text-slate-200 focus:outline-none focus:border-sky-500"
+                autoFocus
+              />
+              <div className="flex justify-end gap-1.5">
+                <button
+                  type="button"
+                  onClick={() => setIsCreatingFile(false)}
+                  className="px-2 py-0.5 text-[10px] text-slate-400 hover:text-slate-200"
+                >
+                  Cancel
+                </button>
+                <button
+                  type="button"
+                  onClick={() => {
+                    if (newFilePath.trim() && onAddNewFile) {
+                      const parts = newFilePath.trim().split('/');
+                      const fileName = parts[parts.length - 1];
+                      onAddNewFile(fileName, newFilePath.trim(), '// Paste your code here\n');
+                      setNewFilePath('');
+                      setIsCreatingFile(false);
+                    }
+                  }}
+                  className="px-2 py-0.5 text-[10px] bg-sky-500 text-slate-950 font-bold rounded"
+                >
+                  Add
+                </button>
+              </div>
+            </div>
+          )}
+
           <div className="space-y-1">
             {files.map((file, idx) => {
               const isSelected = activeFileIndex === idx;

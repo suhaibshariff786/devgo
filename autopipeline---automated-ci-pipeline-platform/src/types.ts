@@ -116,6 +116,40 @@ export interface TroubleshootingChallenge {
   solutionExplanation: string;
 }
 
+export interface RepoBugItem {
+  id: string;
+  category: 'workflow_syntax' | 'script_missing' | 'version_mismatch' | 'test_failure' | 'security' | 'caching' | 'general';
+  severity: 'critical' | 'warning' | 'suggestion';
+  title: string;
+  location: string;
+  description: string;
+  fixDescription: string;
+  fixedCodeSnippet?: string;
+}
+
+export interface RepoAnalysisResult {
+  repoUrl: string;
+  repoFullName: string;
+  description?: string;
+  stars?: number;
+  forks?: number;
+  defaultBranch: string;
+  detectedStack: string;
+  workflowFiles: {
+    name: string;
+    path: string;
+    content: string;
+  }[];
+  packageJson?: any;
+  files: CodeFile[];
+  bugs: RepoBugItem[];
+  summary: string;
+  score: number; // 0-100 CI health score
+  recommendedWorkflowYaml?: string;
+  recentRunStatus?: 'success' | 'failure' | 'in_progress' | 'none';
+  recentRunDetails?: string;
+}
+
 export interface QuizItem {
   id: string;
   question: string;

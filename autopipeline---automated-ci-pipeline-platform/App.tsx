@@ -185,6 +185,28 @@ export default function App() {
     setWorkflowYaml(selectedPreset.workflowYaml);
   };
 
+  const handleAddNewFile = (name: string, path: string, content: string) => {
+    const ext = path.split('.').pop()?.toLowerCase() || '';
+    let language: CodeFile['language'] = 'javascript';
+    if (ext === 'ts' || ext === 'tsx') language = 'typescript';
+    else if (ext === 'json') language = 'json';
+    else if (ext === 'yml' || ext === 'yaml') language = 'yaml';
+    else if (ext === 'py') language = 'python';
+    else if (ext === 'md') language = 'markdown';
+    else if (ext === 'sh') language = 'shell';
+
+    const newFile: CodeFile = {
+      name,
+      path,
+      language,
+      content,
+      isModified: true
+    };
+
+    setFiles(prev => [...prev, newFile]);
+    setActiveFileIndex(files.length);
+  };
+
   // Quick scenario injection
   const handleInjectScenario = (type: 'break_test' | 'fix_test' | 'break_syntax' | 'missing_script') => {
     if (type === 'break_test') {
@@ -484,6 +506,7 @@ export default function App() {
                   activeFileIndex={activeFileIndex}
                   onSelectFile={setActiveFileIndex}
                   onUpdateFileContent={handleUpdateFileContent}
+                  onAddNewFile={handleAddNewFile}
                   onResetFiles={handleResetFiles}
                   onTriggerPipeline={(msg, branch, isPR) => executePipelineRun(msg, branch, isPR)}
                   pipelineStatus={pipelineStatus}
@@ -518,6 +541,7 @@ export default function App() {
                 activeFileIndex={activeFileIndex}
                 onSelectFile={setActiveFileIndex}
                 onUpdateFileContent={handleUpdateFileContent}
+                onAddNewFile={handleAddNewFile}
                 onResetFiles={handleResetFiles}
                 onTriggerPipeline={(msg, branch, isPR) => executePipelineRun(msg, branch, isPR)}
                 pipelineStatus={pipelineStatus}
@@ -571,6 +595,16 @@ export default function App() {
             onApplyGeneratedYaml={yaml => {
               setWorkflowYaml(yaml);
               setActiveTab('workflow');
+            }}
+            onLoadRepoFiles={(loadedFiles, yaml) => {
+              if (loadedFiles && loadedFiles.length > 0) {
+                setFiles(loadedFiles);
+                setActiveFileIndex(0);
+              }
+              if (yaml) {
+                setWorkflowYaml(yaml);
+              }
+              setActiveTab('simulator');
             }}
             initialErrorLog={initialErrorLogForAI}
           />
