@@ -1,7 +1,8 @@
 {
-  "name": "sky-metropolis",
+  "name": "devgo",
+  "description": "DevGo - Automated CI/CD platform, interactive testing simulator, and GitHub repository analyzer",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "tsx server.ts",

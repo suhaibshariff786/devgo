@@ -1,0 +1,6 @@
+{
+  "name": "DevGo - Automated CI Pipeline Platform & Code Analyzer",
+  "description": "Interactive learning platform, live visual simulator, GitHub repo analyzer, and production workflow generator for Automated CI Pipelines with GitHub Actions, Git, and Node.js/Python.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
