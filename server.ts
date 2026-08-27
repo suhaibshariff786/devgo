@@ -65,7 +65,7 @@ async function callGeminiResiliently(
 
 async function startServer() {
   const app = express();
-  const PORT = 3000;
+  const PORT = Number(process.env.PORT) || 3000;
 
   app.use(express.json({ limit: "10mb" }));
 
@@ -232,11 +232,12 @@ Requirements:
 
       const { owner, repo } = parsed;
       const headers: Record<string, string> = {
-        "User-Agent": "AutoPipeline-DevOps-Platform/1.0",
+        "User-Agent": "DevGo-Analysis-Platform/1.0",
         "Accept": "application/vnd.github.v3+json",
       };
-      if (customToken) {
-        headers["Authorization"] = `Bearer ${customToken}`;
+      const authToken = customToken || process.env.GITHUB_TOKEN;
+      if (authToken) {
+        headers["Authorization"] = `Bearer ${authToken}`;
       }
 
       // Fetch repo general metadata
@@ -482,7 +483,7 @@ Requirements:
   if (process.env.NODE_ENV !== "production") {
     const { createServer: createViteServer } = await import("vite");
     const vite = await createViteServer({
-      server: { middlewareMode: true, hmr: false, ws: false },
+      server: { middlewareMode: true, hmr: false, ws: false, allowedHosts: true },
       appType: "spa",
     });
     app.use(vite.middlewares);
@@ -495,7 +496,7 @@ Requirements:
   }
 
   app.listen(PORT, "0.0.0.0", () => {
-    console.log(`AutoPipeline server running on http://0.0.0.0:${PORT}`);
+    console.log(`DevGo server running on http://0.0.0.0:${PORT}`);
   });
 }
 
