@@ -1,6 +1,0 @@
-{
-  "name": "AutoPipeline - Automated CI Pipeline Platform",
-  "description": "Interactive learning platform, live visual simulator, and production workflow generator for Automated CI Pipelines with GitHub Actions, Git, and Node.js/Python.",
-  "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
-}
